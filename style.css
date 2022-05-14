@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+}
+header {
+  height: 65px;
+  background-color: rgba(202, 202, 202, 0.315);
+}
+nav{
+   margin: auto 50px;
+}
+.toggle-btn {
+  width: 60px;
+  height: 60px;
+  float: right;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+
+.icon {
+    transition-duration: 200ms;
+  width: 60px;
+  height: 8px;
+  margin: auto;
+
+  background-color: black;
+}
+
+.icon::before{
+    transition-duration: 200ms;
+    content: '';
+    width: 60px;
+    height: 8px;
+    top: 10px;
+    position: absolute;
+    background-color: black;
+}
+.icon::after{
+    transition-duration: 200ms;
+    content: '';
+    width: 60px;
+    height: 8px;
+    bottom: 10px;
+    position: absolute;
+    background-color: black;
+}
+
+.toggle-btn.open .icon{
+    transition-duration: 200ms;
+    background-color: transparent;
+}
+
+.toggle-btn.open .icon::before{
+transform: rotateZ(45deg) scaleX(1.2) translate(13px, 13px);
+}
+
+.toggle-btn.open .icon::after{
+    transform: rotateZ(-45deg) scaleX(1.2) translate(12px, -12px);
+}
